@@ -1,0 +1,43 @@
+#users {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.container > h1 {
+  text-align: center;
+}
+
+#users td,
+#users th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#users tr:nth-child(even) {
+  background-color: #b6b4b4;
+}
+#users tr:nth-child(odd) {
+  background-color: #d1cfcf;
+}
+
+#users tr:hover {
+  background-color: #888282;
+}
+
+#users th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0b5563;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  width: 100%;
+}
+a:hover {
+  color: #0b5563;
+}

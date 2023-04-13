@@ -1,0 +1,15 @@
+img {
+  object-fit: contain;
+  height: 500px;
+}
+
+h2 {
+  border-bottom: 1px solid #d1d1d1;
+  padding: 8px;
+  width: 100%;
+}
+
+h2:hover {
+  background-color: #777;
+  color: whitesmoke;
+}
