@@ -29,7 +29,19 @@ export default function HomePage() {
     </tr>
   ));
 
-  const changeData = (e) => {
+  function throttle(func, delay) {
+    let timerId;
+    return function (...args) {
+      if (!timerId) {
+        timerId = setTimeout(() => {
+          func.apply(this, args);
+          timerId = null;
+        }, delay);
+      }
+    };
+  }
+
+  const throttledChangeData = throttle((e) => {
     let inputVl = e.target.value;
     const url = new URL("https://dummyjson.com/users/search?");
     const params = new URLSearchParams();
@@ -46,7 +58,26 @@ export default function HomePage() {
         // handle error here
         console.log(error);
       });
-  };
+  }, 1000);
+
+  // const changeData = (e) => {
+  //   let inputVl = e.target.value;
+  //   const url = new URL("https://dummyjson.com/users/search?");
+  //   const params = new URLSearchParams();
+  //   params.append("q", inputVl);
+  //   url.search = params.toString();
+  //   fetch(url)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data.users);
+  //       setUsers(data.users);
+  //       // handle response data here
+  //     })
+  //     .catch((error) => {
+  //       // handle error here
+  //       console.log(error);
+  //     });
+  // };
 
   return (
     <>
@@ -60,7 +91,7 @@ export default function HomePage() {
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
-                onChange={changeData}
+                onChange={throttledChangeData}
               />
             </div>
             <table id="users">

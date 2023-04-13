@@ -22,19 +22,22 @@ export default function Navbar(props) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse w-100" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
+            <li className="nav-item mx-2">
               <Link
-                className="nav-link active"
+                className="nav-link active btn btn-primary text-white"
                 aria-current="page"
-                to={"contact"}
+                to={"/"}
               >
-                contact
+                Show Users
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={"addusers"}>
+              <Link
+                className="nav-link btn btn-primary text-white"
+                to={"addusers"}
+              >
                 addusers
               </Link>
             </li>
