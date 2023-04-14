@@ -60,25 +60,6 @@ export default function HomePage() {
       });
   }, 1000);
 
-  // const changeData = (e) => {
-  //   let inputVl = e.target.value;
-  //   const url = new URL("https://dummyjson.com/users/search?");
-  //   const params = new URLSearchParams();
-  //   params.append("q", inputVl);
-  //   url.search = params.toString();
-  //   fetch(url)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data.users);
-  //       setUsers(data.users);
-  //       // handle response data here
-  //     })
-  //     .catch((error) => {
-  //       // handle error here
-  //       console.log(error);
-  //     });
-  // };
-
   return (
     <>
       <div className="container">
